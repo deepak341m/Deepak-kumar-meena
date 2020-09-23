@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int main()
+{
+int a;
+printf("\nKernel Version: ");
+system("cat/proc/sys/kernel/osrelease");
+printf("\nCPU TYPE & MODEL: ");
+system("cat/proc/cpuinfo | awk ' NR==4,NR==5{print}'");
+printf("\nInformation on Configured amount of free and Used Memory: ");
+system("cat/proc/meminfo|awk ' NR==1,NR==2{print}'");
+return 0;
+}
